@@ -124,4 +124,4 @@ async def cock_block(ctx):
 
 # run with token
 if __name__ == '__main__':
-    bot.run('ODg3NzQ5ODg3NDczNjE4OTc1.YUIrgg.bqsG1QUdb4X-bE3Dg5RwhLvjSjI')
+    bot.run('TOKEN')
