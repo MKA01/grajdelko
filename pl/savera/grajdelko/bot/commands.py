@@ -69,6 +69,10 @@ def add_commands(bot, player, discord):
         elif len(args) > 1:
             url = ' '.join(args)
 
+        if "playlist" in url:
+            await ctx.send('<@{0}> spierdalaj z tą playlistą :rage:'.format(ctx.message.author.id))
+            return
+
         voice_client = ctx.message.guild.voice_client
 
         if ctx.message.author.voice and not voice_client:
@@ -77,7 +81,6 @@ def add_commands(bot, player, discord):
             voice_client = ctx.message.guild.voice_client
 
         info = await player.add_song_to_queue(ctx, url, voice_client)
-        discord = player.discord
 
         embed = discord.Embed(title=info['title'], colour=discord.Colour(0x1), url=info['webpage_url'])
         embed.set_thumbnail(url=info['thumbnail'])
@@ -140,8 +143,10 @@ def add_commands(bot, player, discord):
 
 
 async def cock_block(ctx):
-    if ctx.message.author.id == 243344283862695936:
-        return False
-    else:
-        await ctx.send('W dupach mamy <@{0}>. Nami... rządzi Papież.'.format(ctx.message.author.id))
-        return True
+    return False
+
+    # if ctx.message.author.id == 243344283862695936:
+    #     return False
+    # else:
+    #     await ctx.send('W dupach mamy <@{0}>. Nami... rządzi Papież.'.format(ctx.message.author.id))
+    #     return True

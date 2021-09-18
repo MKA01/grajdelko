@@ -1,11 +1,14 @@
 import asyncio
 import datetime
+from queue import PriorityQueue
+
 import validators
 import youtube_dl
 
 
 class Player:
     queue = asyncio.Queue()
+    # queue = PriorityQueue()
     play_next_song = asyncio.Event()
     next_song = None
     youtube_dl.utils.bug_reports_message = lambda: ''

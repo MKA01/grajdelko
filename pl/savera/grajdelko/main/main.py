@@ -3,6 +3,9 @@ from discord.ext import commands
 from pl.savera.grajdelko.bot.commands import add_commands
 from pl.savera.grajdelko.player.Player import Player
 
+# opus init for pyinstaller - uncomment when building
+# discord.opus.load_opus('libopus-0.x64.dll')
+
 # discord declarations
 client = discord.Client()
 bot = commands.Bot(command_prefix='-')
